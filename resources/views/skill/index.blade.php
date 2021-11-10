@@ -15,6 +15,7 @@
                             <th class="border border-green-600 p-2">id</th>
                             <th class="border border-green-600 p-2">name</th>
                             <th class="border border-green-600 p-2">status</th>
+                            <th class="border border-green-600 p-2">詳細</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,7 +23,8 @@
                         <tr>
                             <td class="border border-green-600 p-2">{{ $skill->id }}</td>
                             <td class="border border-green-600 p-2">{{ $skill->skill_name }}</td>
-                            <td class="border border-green-600 p-2">{{ $skill->skill_status }}</td>
+                            <td class="border border-green-600 p-2">{{  \App\Models\Skill::SKILL_STATUS_OBJECT[$skill->skill_status] }}</td>
+                            <td class="border border-green-600 p-2"><button onclick="location.href='/skill/{{ $skill->id }}'" class="button ">詳細</button></td>
                         </tr>
                         @endforeach
                     </tbody>

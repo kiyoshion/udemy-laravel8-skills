@@ -24,6 +24,7 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth'])->prefix('skill')->group(function() {
     Route::get('/', [SkillController::class, 'index'])->name('skill');
+    Route::get('/{id}', [SkillController::class, 'show'])->name('skill.show');
 });
 
 require __DIR__.'/auth.php';
